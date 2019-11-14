@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/anhdong"
+        android:layout_gravity="center"
+        android:transitionName="imgGif">
+    </pl.droidsonroids.gif.GifImageView>
+
+    <EditText
+        android:id="@+id/edtBoy"
+        android:layout_marginTop="16dp"
+        android:hint="BoyFriend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edtGirl"
+        android:layout_marginTop="16dp"
+        android:hint="GirlFriend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:hint="dd/mm/yyyy"
+            android:id="@+id/edtDay"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_margin="2dp"
+            android:padding="2dp"
+            android:id="@+id/imgLich"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/lich"/>
+    </LinearLayout>
+
+    <Button
+        android:onClick="setUp"
+        android:id="@+id/btnSubmit"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/setup_btn"
+        android:text="Khởi tạo"
+        android:textAllCaps="false" />
+
+
+
+</LinearLayout>

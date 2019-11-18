@@ -27,8 +27,8 @@ public class StartActivity extends AppCompatActivity {
     DatabaseManager db;
     UserDAO userDAO;
     ImageView imgDay;
-    EditText edtBoy , edtGirl , edtDay;
-    private  int mY,mM,mD;
+    EditText edtBoy, edtGirl, edtDay;
+    private int mY, mM, mD;
     @SuppressLint("SimpleDateFormat")
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
@@ -37,22 +37,26 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         initView();
-        onClick();
-    }
 
+        imgDay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shopdatePicke();
+            }
+        });
+    }
 
     public void setUp(View view) {
         try {
             setInformation();
-        }catch (ParseException e){
+        } catch (ParseException e) {
             e.printStackTrace();
         }
     }
 
-    private void onClick() {
-        imgDay.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
+
+
+    private void shopdatePicke() {
         final Calendar c = Calendar.getInstance();
         mD = c.get(Calendar.DAY_OF_MONTH);
         mM = c.get(Calendar.MONTH);
@@ -71,8 +75,6 @@ public class StartActivity extends AppCompatActivity {
                 }, mD, mM, mY);
         dpd.show();
     }
-});
-    }
 
     private void initView() {
         db = new DatabaseManager(this);
@@ -88,11 +90,11 @@ public class StartActivity extends AppCompatActivity {
         final String nameB = edtBoy.getText().toString();
         final String nameG = edtGirl.getText().toString();
         final Date dateStart = sdf.parse(edtDay.getText().toString());
-        User user = new User(1,nameB , nameG , dateStart);
-        if (userDAO.inserUser(user) > 0){
+        User user = new User(1, nameB, nameG, dateStart);
+        if (userDAO.inserUser(user) > 0) {
             Toast.makeText(this, "Thành công", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(StartActivity.this , MainActivity.class));
-        }else {
+            startActivity(new Intent(StartActivity.this, MainActivity.class));
+        } else {
             Toast.makeText(this, "thất bại", Toast.LENGTH_SHORT).show();
         }
 

@@ -40,12 +40,11 @@ public class MainActivity extends AppCompatActivity {
     UserDAO userDAO;
     TextView tvB , tvG;
     Bitmap resizedBitmap = null;
-    Uri imgAvatarUri;
-    Intent intent;
+
 
     private final int SELECT_PHOTO = 1;
     private final int SELECT_PHOTO2 = 2;
-    private final int REQUEST_CODE_BACKGROUND = 1;
+
 
     @SuppressLint("SimpleDateFormat")
     static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -90,11 +89,7 @@ public class MainActivity extends AppCompatActivity {
         }.execute();
     }
 
-    private int getSizeUser() throws ParseException {
-        final List<User> users = UserDAO.getAllUser();
-        Log.d("SIZEE", users.size() + "");
-        return users.size();
-    }
+
     @SuppressLint("StaticFieldLeak")
     private void setInfor() {
         new AsyncTask<Void, Void, List<User>>() {
@@ -104,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 users = UserDAO.getAllUser();
                 return users;
             }
-
             @Override
             protected void onPostExecute(List<User> users) {
                 super.onPostExecute(users);
@@ -112,22 +106,16 @@ public class MainActivity extends AppCompatActivity {
                     tvB.setText(users.get(0).getTenBan());
                     tvG.setText(users.get(0).getTenNguoiAy());
                 }
+                try {
+                    setTime(sdf.format(users.get(0).getDateStart()));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         }.execute();
     }
 
-
-
-
-    public byte[] Image_to_Byte(CircleImageView imageView) {
-        BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
-        Bitmap bitmap = drawable.getBitmap();
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
-        byte[] byteArray = outputStream.toByteArray();
-        return byteArray;
-    }
-
+    //  sử lý ảnh
     private void onClick() {
         avtB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,6 +183,12 @@ public class MainActivity extends AppCompatActivity {
         tvG = findViewById(R.id.tvGirl);
     }
 
+    private int getSizeUser() throws ParseException {
+        final List<User> users = UserDAO.getAllUser();
+        Log.d("SIZEE", users.size() + "");
+        return users.size();
+    }
+
 
     @SuppressLint({"StaticFieldLeak", "SetTextI18n"})
     private void setTime(String dayStart) throws ParseException {
@@ -205,7 +199,10 @@ public class MainActivity extends AppCompatActivity {
 
             if (startDay.before(thisDay)) {
                 Calendar c = Calendar.getInstance();
-                c.setTimeInMillis(diff); //truyen vao
+                c.setTimeInMillis(diff);
+                int mY = c.get(Calendar.YEAR) - 1970;
+                int mMonth = c.get(Calendar.MONTH);
+                int mDay = c.get(Calendar.DAY_OF_MONTH) - 1;
                 Long day = diff / 86400000;
                 int days = day.intValue();
 
@@ -231,42 +228,11 @@ public class MainActivity extends AppCompatActivity {
                     loadingView.setProgressValue(days - 900);
                 }
                 loadingView.setShapeType(WaveLoadingView.ShapeType.CIRCLE);
-                loadingView.setCenterTitle(" Day");
+                loadingView.setCenterTitle(day +" Day");
                 loadingView.pauseAnimation();
                 loadingView.resumeAnimation();
                 loadingView.cancelAnimation();
                 loadingView.startAnimation();
-
-//                if (mYear < 10) {
-//                    tvYear.setText("0" + mYear + " Năm - ");
-//                } else {
-//                    tvYear.setText(mYear + " Năm - ");
-//                }
-//                if (mMonth < 10) {
-//                    tvMonth.setText("0" + mMonth + " Tháng - ");
-//                } else {
-//                    tvMonth.setText(mMonth + " Tháng - ");
-//                }
-//                if (mDay < 10) {
-//                    tvDay.setText("0" + mDay + " Ngày - ");
-//                } else {
-//                    tvDay.setText(mDay + " Ngày - ");
-//                }
-//                if (hr < 10) {
-//                    tvHour.setText("0" + hr + " Giờ - ");
-//                } else {
-//                    tvHour.setText(hr + " Giờ - ");
-//                }
-//                if (min < 10) {
-//                    tvMinute.setText("0" + min + " Phút - ");
-//                } else {
-//                    tvMinute.setText(min + " Phút - ");
-//                }
-//                if (sec < 10) {
-//                    tvSeconds.setText("0" + sec + " Giây");
-//                } else {
-//                    tvSeconds.setText(sec + " Giây");
-//                }
 
             } else {
                 Intent intent = new Intent(MainActivity.this, StartActivity.class);

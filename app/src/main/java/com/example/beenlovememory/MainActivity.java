@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private final int REQUEST_CODE_BACKGROUND = 1;
 
     @SuppressLint("SimpleDateFormat")
-    static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    static SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
 
     @SuppressLint("StaticFieldLeak")

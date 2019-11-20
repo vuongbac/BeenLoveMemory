@@ -14,7 +14,7 @@ import android.view.View;
 import pl.droidsonroids.gif.GifImageView;
 
 public class HelloActivity extends AppCompatActivity {
-    GifImageView gif;
+GifImageView gif;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +26,12 @@ public class HelloActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void run() {
-                Intent intent = new Intent(HelloActivity.this, StartActivity.class);
-                Pair[] pairs = new Pair[1];
-                pairs[0] = new Pair<View, String>(gif, "imgGif");
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(HelloActivity.this, pairs);
+                Intent intent = new Intent(HelloActivity.this,StartActivity.class);
+                Pair[] pairs  = new Pair[1];
+                pairs[0] = new Pair<View , String>(gif,"imgGif");
+                ActivityOptions options  =  ActivityOptions.makeSceneTransitionAnimation(HelloActivity.this,pairs);
 
-                startActivity(intent, options.toBundle());
+                startActivity(intent , options.toBundle());
 
                 finish();
             }

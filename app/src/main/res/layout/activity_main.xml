@@ -1,142 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <me.itangqi.waveloadingview.WaveLoadingView
-        android:id="@+id/waveLoadingView"
-        android:layout_width="180dp"
-        android:layout_height="189dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468"
-        app:wlv_borderColor="@color/colorPrimaryDark"
-        app:wlv_borderWidth="3dp"
-        app:wlv_progressValue="40"
-        app:wlv_round_rectangle="true"
-        app:wlv_shapeType="circle"
-        app:wlv_titleBottomStrokeColor="@color/colorAccent"
-        app:wlv_titleCenter="title"
-        app:wlv_titleCenterColor="@android:color/white"
-        app:wlv_titleCenterStrokeWidth="1dp"
-        app:wlv_titleTopSize="20sp"
-        app:wlv_triangle_direction="north"
-        app:wlv_waveAmplitude="70"
-        app:wlv_waveColor="@color/colorAccent" />
-
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/gif2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/waveLoadingView"
-        app:layout_constraintVertical_bias="0.62" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/avatarB"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:src="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/waveLoadingView"
-        app:layout_constraintVertical_bias="0.482" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/avatarG"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:src="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/waveLoadingView"
-        app:layout_constraintVertical_bias="0.482" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="75dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.996"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatarB"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/sboy" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="75dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatarG"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/sgirrl" />
-
     <TextView
-        android:id="@+id/tvBoy"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textSize="16dp"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="20dp"
+        android:layout_weight="9"
+        android:text="Been Love Memny"
+        android:textColor="@color/white"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.166" />
-
-    <TextView
-        android:id="@+id/tvGirl"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.166" />
-
+        android:fontFamily="@font/candlescript_pro" />
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fab"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        app:layout_anchorGravity="right"
-        app:layout_constraintBottom_toTopOf="@+id/avatarB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:menu_icon="@drawable/icon_love"
+        android:layout_gravity="top|end"
+        app:menu_icon="@drawable/ic_add"
         app:menu_openDirection="down">
 
 
@@ -144,36 +33,108 @@
             android:id="@+id/floatingShare"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/icon_share"
-            app:fab_label="a"
-            app:fab_size="mini"
-            tools:layout_editor_absoluteX="119dp"
-            tools:layout_editor_absoluteY="81dp" />
+            android:src="@drawable/ic_share"
+            app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingMute"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/icon_mute"
-            app:fab_label="a"
-            app:fab_size="mini"
-            tools:layout_editor_absoluteX="170dp"
-            tools:layout_editor_absoluteY="81dp" />
+            android:src="@drawable/ic_volume_off"
+            app:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
 
-    <TextView
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="60dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Been Love Memny"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/waveLoadingView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.142" />
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        android:weightSum="7">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatarB"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@color/colorAccent" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/sboy" />
+
+            <TextView
+                android:id="@+id/tvBoy"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:fontFamily="@font/candlescript_pro"/>
+
+        </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/gif2" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatarG"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@color/colorAccent" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/sgirrl" />
+
+            <TextView
+                android:id="@+id/tvGirl"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:fontFamily="@font/candlescript_pro"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

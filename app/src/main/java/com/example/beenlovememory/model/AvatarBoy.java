@@ -1,17 +1,34 @@
 package com.example.beenlovememory.model;
 
 public class AvatarBoy {
-    private byte[] Avt_Boy;
+    private int id;
+    private byte[] avtBoy;
 
-    public byte[] getAvt_Boy() {
-        return Avt_Boy;
+    public AvatarBoy() {
     }
 
-    public void setAvt_Boy(byte[] avt_Boy) {
-        Avt_Boy = avt_Boy;
+    public AvatarBoy(byte[] avtBoy) {
+        this.avtBoy = avtBoy;
     }
 
-    public AvatarBoy(byte[] avt_Boy) {
-        Avt_Boy = avt_Boy;
+    public AvatarBoy(int id, byte[] avtBoy) {
+        this.id = id;
+        this.avtBoy = avtBoy;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public byte[] getAvtBoy() {
+        return avtBoy;
+    }
+
+    public void setAvtBoy(byte[] avtBoy) {
+        this.avtBoy = avtBoy;
     }
 }

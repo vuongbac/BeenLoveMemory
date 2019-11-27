@@ -3,6 +3,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.beenlovememory.model.AvatarBoy;
 
 
 public class DatabaseManager extends SQLiteOpenHelper {
@@ -17,12 +18,14 @@ public class DatabaseManager extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(UserDAO.SQL_USER);
+        db.execSQL(AvatarBoyDAO.SQL_AVATAR_BOY);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("Drop table if exists " + UserDAO.TABLE_NAME);
+        db.execSQL("Drop table if exists " + AvatarBoyDAO.TABLE_NAME_AVATAR_BOY);
         onCreate(db);
 
     }

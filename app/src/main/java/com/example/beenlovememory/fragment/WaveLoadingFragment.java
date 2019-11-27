@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,11 +31,28 @@ public class WaveLoadingFragment extends Fragment {
     @SuppressLint("SimpleDateFormat")
     static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+    @SuppressLint("StaticFieldLeak")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_wave_loading,container,false);
         loadingView = view.findViewById(R.id.waveLoadingView);
-        setInfor();
+        new AsyncTask< Void , Void , Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    if (getSizeUser() == 0) {
+                        Intent intent = new Intent(getContext(), StartActivity.class);
+                        startActivity(intent);
+                        Log.i("tag", "abc");
+                    } else {
+                        setInfor();
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        }.execute();
         return view;
     }
 
@@ -110,5 +128,11 @@ public class WaveLoadingFragment extends Fragment {
             e.printStackTrace();
         }
 
+    }
+
+    private int getSizeUser() throws ParseException {
+        final List<User> users = UserDAO.getAllUser();
+        Log.d("SIZEE", users.size() + "");
+        return users.size();
     }
 }

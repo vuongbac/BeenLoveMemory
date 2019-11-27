@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.beenlovememory.MainActivity;
 import com.example.beenlovememory.R;
 import com.example.beenlovememory.StartActivity;
 import com.example.beenlovememory.database.UserDAO;
@@ -29,6 +30,7 @@ public class DetailFragment extends Fragment {
     private Button btnYear,btnMonth,btnDay,btnHour,btnMinute,btnSeconds;
     @SuppressLint("SimpleDateFormat")
     static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    @SuppressLint("StaticFieldLeak")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_detail,container,false);
@@ -38,7 +40,23 @@ public class DetailFragment extends Fragment {
         btnHour = view.findViewById(R.id.bt_gio);
         btnMinute = view.findViewById(R.id.bt_phut);
         btnSeconds = view.findViewById(R.id.bt_giay);
-        setInfor();
+        new AsyncTask< Void , Void , Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    if (getSizeUser() == 0) {
+                        Intent intent = new Intent(getContext(), StartActivity.class);
+                        startActivity(intent);
+                        Log.i("tag", "abc");
+                    } else {
+                        setInfor();
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        }.execute();
         return view;
     }
 
@@ -121,5 +139,11 @@ public class DetailFragment extends Fragment {
             e.printStackTrace();
         }
 
+    }
+
+    private int getSizeUser() throws ParseException {
+        final List<User> users = UserDAO.getAllUser();
+        Log.d("SIZEE", users.size() + "");
+        return users.size();
     }
 }

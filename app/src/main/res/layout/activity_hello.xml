@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:gravity="center"
-    tools:context=".HelloActivity">
+    tools:context=".view.HelloActivity">
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imgGif"

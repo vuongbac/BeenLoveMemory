@@ -20,7 +20,7 @@
 
             <Button
                 android:id="@+id/bt_nam"
-                android:layout_width="58dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_love"
                 android:textColor="@color/white"
@@ -42,7 +42,7 @@
 
             <Button
                 android:id="@+id/bt_thang"
-                android:layout_width="58dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/ic_love"
@@ -66,7 +66,7 @@
 
             <Button
                 android:id="@+id/bt_ngay"
-                android:layout_width="58dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_love"
                 android:textColor="@color/white"
@@ -81,8 +81,8 @@
                 android:textSize="23sp"
                 android:layout_marginStart="2dp"
                 android:fontFamily="@font/candlescript_pro">
-
             </TextView>
+
         </LinearLayout>
 
         <LinearLayout
@@ -92,7 +92,7 @@
 
             <Button
                 android:id="@+id/bt_gio"
-                android:layout_width="58dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_love"
                 android:textColor="@color/white"
@@ -118,7 +118,7 @@
 
             <Button
                 android:id="@+id/bt_phut"
-                android:layout_width="58dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_love"
                 android:textColor="@color/white"
@@ -140,24 +140,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/bt_giay"
-                android:layout_width="58dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_love"
-                android:textColor="@color/white"
-                android:fontFamily="@font/candlescript_pro" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Giây"
-                android:textColor="#ffffff"
-                android:textSize="23sp"
-                android:fontFamily="@font/candlescript_pro" />
-        </LinearLayout>
+            android:orientation="vertical"/>
 
     </LinearLayout>
 

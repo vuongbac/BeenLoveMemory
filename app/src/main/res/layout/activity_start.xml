@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity">
+    tools:context=".view.StartActivity">
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="150dp"
@@ -54,7 +54,6 @@
     </LinearLayout>
 
     <Button
-        android:onClick="setUp"
         android:id="@+id/btnSubmit"
         android:layout_width="150dp"
         android:layout_height="40dp"

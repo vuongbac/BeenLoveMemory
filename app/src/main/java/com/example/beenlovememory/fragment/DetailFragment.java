@@ -12,11 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.example.beenlovememory.MainActivity;
 import com.example.beenlovememory.R;
-import com.example.beenlovememory.StartActivity;
+import com.example.beenlovememory.view.StartActivity;
 import com.example.beenlovememory.database.UserDAO;
 import com.example.beenlovememory.model.User;
 
@@ -39,7 +37,7 @@ public class DetailFragment extends Fragment {
         btnDay = view.findViewById(R.id.bt_ngay);
         btnHour = view.findViewById(R.id.bt_gio);
         btnMinute = view.findViewById(R.id.bt_phut);
-        btnSeconds = view.findViewById(R.id.bt_giay);
+
         new AsyncTask< Void , Void , Void>(){
             @Override
             protected Void doInBackground(Void... voids) {
@@ -98,7 +96,7 @@ public class DetailFragment extends Fragment {
                 int mDay = c.get(Calendar.DAY_OF_MONTH) - 1;
                 int hr = c.get(Calendar.HOUR);
                 int min = c.get(Calendar.MINUTE);
-                int sec = c.get(Calendar.SECOND);
+
 
                 if (mYear < 10){
                     btnYear.setText("0"+mYear);
@@ -124,11 +122,6 @@ public class DetailFragment extends Fragment {
                     btnMinute.setText("0"+min);
                 }else {
                     btnMinute.setText(String.valueOf(min));
-                }
-                if (sec < 10){
-                    btnSeconds.setText("0"+sec);
-                }else {
-                    btnSeconds.setText(String.valueOf(sec));
                 }
 
             }else {

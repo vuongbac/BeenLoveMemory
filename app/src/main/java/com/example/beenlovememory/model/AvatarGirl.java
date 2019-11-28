@@ -1,7 +1,21 @@
 package com.example.beenlovememory.model;
 
 public class AvatarGirl {
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private byte[] Avt_girl;
+
+    public AvatarGirl() {
+
+    }
 
     public byte[] getAvt_girl() {
         return Avt_girl;

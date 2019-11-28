@@ -12,9 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.beenlovememory.MainActivity;
 import com.example.beenlovememory.R;
-import com.example.beenlovememory.StartActivity;
+import com.example.beenlovememory.view.StartActivity;
 import com.example.beenlovememory.database.UserDAO;
 import com.example.beenlovememory.model.User;
 

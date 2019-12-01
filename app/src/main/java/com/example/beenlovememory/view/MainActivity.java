@@ -221,13 +221,13 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void startMusic() {
-        fab.setImageResource(R.drawable.volumestop);
+        fab.setImageResource(R.drawable.ic_volume_off);
         media.start();
     }
 
     @Override
     public void pauseMusic() {
-        fab.setImageResource(R.drawable.volumestart);
+        fab.setImageResource(R.drawable.ic_volume_on);
         media.pause();
     }
 

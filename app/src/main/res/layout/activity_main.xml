@@ -40,7 +40,7 @@
             android:id="@+id/floatingMute"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/volumestop"
+            android:src="@drawable/ic_volume_off"
             app:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>

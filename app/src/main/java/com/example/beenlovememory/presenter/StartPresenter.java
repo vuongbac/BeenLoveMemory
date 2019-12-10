@@ -1,6 +1,10 @@
 package com.example.beenlovememory.presenter;
 
+import android.widget.EditText;
+
 import com.example.beenlovememory.model.StartView;
+
+import java.util.Date;
 
 public class StartPresenter {
     StartView startView;
@@ -9,10 +13,13 @@ public class StartPresenter {
         this.startView = startView;
     }
 
-    public void check(String nameB, String nameG) {
-        if (nameB.isEmpty() && nameG.isEmpty()) {
+    public void check(String nameB, String nameG  ) {
+        if (nameB.isEmpty()) {
             startView.setErrorBoyname();
-        }else {
+        }else if (nameG.isEmpty()) {
+            startView.setErrorGirlname();
+        }
+        else {
             startView.intentStart();
             startView.successfulStart();
         }
@@ -23,6 +30,7 @@ public class StartPresenter {
 
 
     }
+
 }
 
 

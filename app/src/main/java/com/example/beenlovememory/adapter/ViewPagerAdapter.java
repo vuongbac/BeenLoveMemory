@@ -7,8 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
-
 import com.example.beenlovememory.fragment.DetailFragment;
 import com.example.beenlovememory.fragment.WaveLoadingFragment;
 

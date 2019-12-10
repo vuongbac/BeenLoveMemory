@@ -6,6 +6,7 @@ public interface StartView {
     void setErrorBoyname();
     void setErrorGirlname();
     void playMusic();
+    void checkDay();
 
 
 }

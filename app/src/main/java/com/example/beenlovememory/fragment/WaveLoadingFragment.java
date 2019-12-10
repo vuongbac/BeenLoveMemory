@@ -81,6 +81,7 @@ public class WaveLoadingFragment extends Fragment {
         try {
             Date startDay = sdf.parse(dayStart);
             Date thisDay = new Date();
+           
             final Long diff = thisDay.getTime() - startDay.getTime();
 
             if (startDay.before(thisDay)) {

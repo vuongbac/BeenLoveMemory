@@ -102,7 +102,6 @@ public class StartActivity extends AppCompatActivity
         final String nameG = edtGirl.getText().toString();
         startPresenter.check(nameB, nameG);
         final Date dateStart = sdf.parse(edtDay.getText().toString());
-
         User user = new User(1, nameB, nameG, dateStart);
         if (userDAO.inserUser(user) > 0) {
             startPresenter.khoitao();
@@ -144,12 +143,15 @@ public class StartActivity extends AppCompatActivity
     @Override
     public void setErrorGirlname() {
         edtGirl.setError("cần nhập tên bạn nữ");
-
-
     }
 
     @Override
     public void playMusic() {
 
+    }
+
+    @Override
+    public void checkDay() {
+        edtDay.setError("nil");
     }
 }

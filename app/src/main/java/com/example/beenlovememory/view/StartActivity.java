@@ -100,7 +100,8 @@ public class StartActivity extends AppCompatActivity
     private void setInformation() throws ParseException {
         final String nameB = edtBoy.getText().toString();
         final String nameG = edtGirl.getText().toString();
-        startPresenter.check(nameB, nameG);
+        final String dayS = edtDay.getText().toString();
+        startPresenter.check(nameB, nameG , dayS);
         final Date dateStart = sdf.parse(edtDay.getText().toString());
         User user = new User(1, nameB, nameG, dateStart);
         if (userDAO.inserUser(user) > 0) {
@@ -147,11 +148,10 @@ public class StartActivity extends AppCompatActivity
 
     @Override
     public void playMusic() {
-
     }
 
     @Override
     public void checkDay() {
-        edtDay.setError("nil");
+        edtDay.setError("còn chọn ngày ");
     }
 }

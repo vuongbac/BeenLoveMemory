@@ -13,13 +13,14 @@ public class StartPresenter {
         this.startView = startView;
     }
 
-    public void check(String nameB, String nameG  ) {
+    public void check(String nameB, String nameG ,String dayS) {
         if (nameB.isEmpty()) {
             startView.setErrorBoyname();
         }else if (nameG.isEmpty()) {
             startView.setErrorGirlname();
-        }
-        else {
+        } else if (dayS.isEmpty()) {
+            startView.checkDay();
+        } else {
             startView.intentStart();
             startView.successfulStart();
         }

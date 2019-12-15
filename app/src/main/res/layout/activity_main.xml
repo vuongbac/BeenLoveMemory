@@ -29,12 +29,12 @@
         app:menu_openDirection="down">
 
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/floatingShare"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_share"
-            app:fab_size="mini" />
+<!--        <com.github.clans.fab.FloatingActionButton-->
+<!--            android:id="@+id/floatingShare"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:src="@drawable/ic_share"-->
+<!--            app:fab_size="mini" />-->
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingMute"

@@ -28,7 +28,7 @@ public class HelloActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void run() {
-                Intent intent = new Intent(HelloActivity.this, StartActivity.class);
+                Intent intent = new Intent(HelloActivity.this, MainActivity.class);
                 Pair[] pairs = new Pair[1];
                 pairs[0] = new Pair<View, String>(gif, "imgGif");
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(HelloActivity.this, pairs);

@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.StartActivity"/>
-        <activity android:name=".view.HelloActivity" />
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.MainActivity" />
+        <activity android:name=".view.HelloActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
